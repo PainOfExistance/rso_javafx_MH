@@ -1,16 +1,17 @@
 package com.example.rso_java_mh;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Event {
+public class Event implements Serializable {
     private String id;
     private String ime;
     private Date datum;
 
-    public Event(String id, String ime, Date date){
-        this.id=id;
-        this.ime=ime;
-        this.datum=date;
+    public Event(String id, String ime, Date date) {
+        this.id = id;
+        this.ime = ime;
+        this.datum = date;
     }
 
     public Date getDatum() {
@@ -35,5 +36,9 @@ public class Event {
 
     public void setIme(String ime) {
         this.ime = ime;
+    }
+
+    public String toString() {
+        return id + "  " + ime + "  " + datum.toString();
     }
 }
